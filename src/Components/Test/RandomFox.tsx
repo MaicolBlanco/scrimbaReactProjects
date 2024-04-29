@@ -1,8 +1,10 @@
-// generate a random function between 1 and 123
-const random = (): number => Math.floor(Math.random() * 123) + 1;
+// interface Props {
+//   image: string;
+// }
+type Props = { image: string };
 
-export const RandomFox = (): JSX.Element => {
-  const image: string = `https://randomfox.ca/images/${random()}.jpg`;
-  
-  return <img width={300} height="auto" src={image} style={{ borderRadius: 15 }}/>;
+export const RandomFox = ({ image }: Props): JSX.Element => {
+  return (
+    <img width={300} height="auto" src={image} style={{ borderRadius: 15 }} />
+  );
 };
