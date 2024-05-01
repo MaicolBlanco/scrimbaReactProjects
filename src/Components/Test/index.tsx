@@ -1,6 +1,6 @@
 import { useState } from "react";
 import React from "react";
-import { RandomFox } from "./RandomFox";
+import { LazyImage } from "./RandomFox";
 
 // generate a random function between 1 and 123
 const random = (): number => Math.floor(Math.random() * 123) + 1;
@@ -30,7 +30,14 @@ const Test = (): JSX.Element => {
       <button onClick={addNewFox}>Add new fox</button>
       {images.map(({ id, url }) => (
         <div key={id} style={{ padding: 4 }}>
-          <RandomFox image={url} />
+          <LazyImage
+            src={url}
+            width={320}
+            height="auto"
+            title="Random Fox"
+            style={{ borderRadius: 15, backgroundColor: "gold" }}
+            onClick={() => console.log("hey I imagen")}
+          />
         </div>
       ))}
     </main>
