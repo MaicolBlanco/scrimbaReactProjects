@@ -1,2 +1,3 @@
 export * from "./Test"
-export * from "./ProjectSetup"
+export * from "./ProjectBasic"
+export * from "./AirBnbClone"

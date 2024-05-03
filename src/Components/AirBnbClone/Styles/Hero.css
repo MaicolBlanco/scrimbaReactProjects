@@ -1,0 +1,22 @@
+.arbnbn--hero {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  text-align: left;
+}
+
+.arbnbn--hero img {
+  max-width: 400px;
+  align-self: center;
+}
+
+.arbnbn--hero h1 {
+  color: black;
+  padding-left: 0;
+  margin-bottom: 5px;
+}
+
+.arbnbn--hero p {
+  margin-top: 0;
+}

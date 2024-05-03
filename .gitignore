@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# imágenes PNG dentro del directorio assets/img
+/assets/img/*.png

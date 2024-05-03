@@ -1,12 +1,14 @@
-import { ProjectSetup, Test } from "./Components";
+import { ProjectBasic, Test } from "./Components";
 import "./App.css";
+import AirBnbClone from "./Components/AirBnbClone";
 
 function App() {
   return (
     <>
-      <h1>Vite + React + Typescript</h1>
+      <h1 style={{color:'gray'}}>Vite + React + Typescript</h1>
       <Test />
-      <ProjectSetup/>
+      <ProjectBasic/>
+      <AirBnbClone/>
     </>
   );
 }

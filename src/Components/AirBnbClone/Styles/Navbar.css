@@ -1,0 +1,11 @@
+.airbnb-logo {
+  display: flex;
+  padding: 20px 36px;
+  box-shadow: 0px 2.98px 7.46px rgba(0, 0, 0, 0.1);
+}
+
+.airbnb-logo img {
+  width: 120px;
+  max-width: 120px;
+  height: 40px;
+}
