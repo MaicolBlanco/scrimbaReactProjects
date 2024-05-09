@@ -1,0 +1,49 @@
+.airbnb-card {
+  width: 175px;
+  font-size: 12px;
+  text-align: left;
+  flex: 0 0 auto; /* ADD */
+  display: flex; /* ADD */
+  flex-direction: column; /* ADD */
+  position: relative;
+}
+
+.airbnb-card img {
+  width: 100%;
+  border-radius: 9px;
+}
+
+.airbnb-card--stats {
+  display: flex;
+  align-items: center;
+}
+
+.airbnb-card--stats img {
+  width: 14px;
+  height: 14px;
+}
+
+.star--card {
+  color: #918e9b;
+}
+
+.airbnb-bold {
+  font-weight: bold;
+}
+
+.airnbn-cards-list {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+.airbnb-card--badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background-color: white;
+  padding: 5px 7px;
+  border-radius: 2px;
+  font-weight: bold;
+}

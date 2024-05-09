@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # imágenes PNG dentro del directorio assets/img
-/assets/img/*.png
+/public/img/*.png
