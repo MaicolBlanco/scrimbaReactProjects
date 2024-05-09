@@ -1,0 +1,8 @@
+.meme-header {
+  background-image: linear-gradient(to right, #672280, #A626D3);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: white;
+  font-family: '';
+}
