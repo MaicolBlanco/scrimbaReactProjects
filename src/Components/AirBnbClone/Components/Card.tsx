@@ -1,11 +1,12 @@
 import "../Styles/Card.css";
 
 interface CardProps {
-  img: string;
+  coverImg: string;
   description: string;
-  rating: string | number;
-  reviewCount: number;
-  country: string;
+  stats: {
+    rating: number | string;
+    reviewCount: number;
+};
   title: string;
   price: number;
   openSpots: number;
@@ -13,13 +14,15 @@ interface CardProps {
 }
 
 const Card = (props: CardProps): JSX.Element => {
-  // console.log(props);
+  //console.log(props);
   const {
-    img,
+    coverImg,
     description,
-    rating,
-    reviewCount,
-    country,
+    stats: {
+      rating,
+      reviewCount,
+    },
+    location,
     title,
     price
   } = props;
@@ -36,7 +39,7 @@ const Card = (props: CardProps): JSX.Element => {
       {badgeText ? <div className="airbnb-card--badge">{badgeText}</div> : null}
       {/* Otra forma de hacerlo es con operador logico */}
       {/* {props.openSpots === 0 && <div className="card--badge">SOLD OUT</div>} */}
-      <img src={img} alt={description} />
+      <img src={coverImg} alt={description} />
       <div className="airbnb-card--stats">
         <img
           src="https://pngfre.com/wp-content/uploads/star-png-image-pngfre-44.png"
@@ -44,7 +47,7 @@ const Card = (props: CardProps): JSX.Element => {
         />
         <span>{rating}</span>
         <span className="star--card">({reviewCount}) • </span>
-        <span className="star--card">{country}</span>
+        <span className="star--card">{location}</span>
       </div>
       <p>{title}</p>
       <p>

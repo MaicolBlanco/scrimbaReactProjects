@@ -11,15 +11,16 @@ const AirBnbClone = () => {
     return (
       <Card
         key={item.id}
-        img={item.coverImg}
-        description={item.description}
-        rating={item.stats.rating}
-        reviewCount={item.stats.reviewCount}
-        country={item.location}
-        title={item.title}
-        price={item.price}
-        openSpots={item.openSpots}
-        location={item.location}
+        {...item}/* Se pueden pasar por medio de spreadOperator */
+        // img={item.coverImg}
+        // description={item.description}
+        // rating={item.stats.rating}
+        // reviewCount={item.stats.reviewCount}
+        // country={item.location}
+        // title={item.title}
+        // price={item.price}
+        // openSpots={item.openSpots}
+        // location={item.location}
       />
     );
   });
