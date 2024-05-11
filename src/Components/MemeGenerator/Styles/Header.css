@@ -1,8 +1,21 @@
 .meme-header {
-  background-image: linear-gradient(to right, #672280, #A626D3);
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px;
+  background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
   color: white;
-  font-family: '';
+  padding: 20px;
+  font-family: "Karla", sans-serif;
+}
+
+.meme-header--image {
+  height: 100%;
+  margin-right: 6px;
+}
+
+.meme-header--project {
+  font-size: 12px;
+  font-weight: 500;
+  margin-right: 6px;
 }
