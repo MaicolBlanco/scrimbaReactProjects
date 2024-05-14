@@ -1,13 +1,21 @@
+import React from "react";
 import "../Styles/Meme.css";
+import memesData from "./memesData";
 
 const Meme = (): JSX.Element => {
+  const [memeImage, setMemeImage] = React.useState("");
+
   const handleClick = () => {
-    console.log("Clicked");
+    const memesArray = memesData.data.memes;
+    // console.log(memesArray);
+    const randomNumber = Math.floor(Math.random() * memesArray.length);
+    // console.log(randomNumber);
+    setMemeImage(memesArray[randomNumber].url);
   };
 
   return (
     <main className="meme-main">
-      <form className="meme-form">
+      <div className="meme-form">
         <label className="meme-form--label">
           Top text
           <input
@@ -24,10 +32,11 @@ const Meme = (): JSX.Element => {
             className="meme-form--input"
           />
         </label>
-      </form>
-      <button className="meme-form--button" onClick={handleClick}>
-        Get a new meme image 🖼
-      </button>
+        <button className="meme-form--button" onClick={handleClick}>
+          Get a new meme image 🖼
+        </button>
+      </div>
+      <img src={memeImage} alt="Imagenes creadas aleatoriamente para memes" className="meme-meme--image" />
     </main>
   );
 };

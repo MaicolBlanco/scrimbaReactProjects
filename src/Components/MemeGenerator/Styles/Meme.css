@@ -5,6 +5,7 @@
 .meme-form{
   display: grid;
   grid-template: 40px 40px / 1fr 1fr;
+  gap: 17px;
 }
 
 .meme-form--label{
@@ -20,12 +21,15 @@
 }
 
 .meme-form--button {
-  width: 100%;
+  grid-column: 1 / -1;
   background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
   color: white;
-  padding: 10px;
   font-family: "Karla", sans-serif;
   border-radius: 5px;
   border: none;
   cursor: pointer;
+}
+
+.meme-meme--image{
+  width: 100%;
 }
