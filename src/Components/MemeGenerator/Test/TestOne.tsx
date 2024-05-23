@@ -1,6 +1,6 @@
 import React from "react";
 
-const Test = (): JSX.Element => {
+const TestOne = (): JSX.Element => {
   const [thingsArray, setThingsArray] = React.useState<string[]>(["Thing 1", "Thing 2"]);
 
   const addItem = () => {
@@ -43,4 +43,4 @@ const Test = (): JSX.Element => {
   );
 };
 
-export default Test;
+export default TestOne;

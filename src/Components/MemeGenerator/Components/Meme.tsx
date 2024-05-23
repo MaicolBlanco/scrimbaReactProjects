@@ -21,6 +21,12 @@ const Meme = (): JSX.Element => {
     setMeme({ ...meme, randomImage: url });
   };
 
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>{
+    const {name ,value} = event.target;
+    setMeme({...meme, [name]:value})
+    //console.log(meme);
+  }
+
   return (
     <main className="meme-main">
       <div className="meme-form">
@@ -30,7 +36,10 @@ const Meme = (): JSX.Element => {
             type="text"
             placeholder="Shut up"
             className="meme-form--input"
-          />
+            name="topText"
+            value={meme.topText}
+            onChange={handleChange}
+            />
         </label>
         <label className="meme-form--label">
           Bottom text
@@ -38,17 +47,24 @@ const Meme = (): JSX.Element => {
             type="text"
             placeholder="And take my money"
             className="meme-form--input"
+            name="bottomText"
+            value={meme.bottomText}
+            onChange={handleChange}
           />
         </label>
         <button className="meme-form--button" onClick={getMemeImage}>
           Get a new meme image 🖼
         </button>
       </div>
-      <img
-        src={meme.randomImage}
-        alt="Imagenes creadas aleatoriamente para memes"
-        className="meme-meme--image"
-      />
+      <div className="meme">
+        <img
+          src={meme.randomImage}
+          alt="Imagenes creadas aleatoriamente para memes"
+          className="meme--image"
+        />
+        <h2 className="meme--text top">{meme.topText}</h2>
+        <h2 className="meme--text bottom">{meme.bottomText}</h2>
+      </div>
     </main>
   );
 };

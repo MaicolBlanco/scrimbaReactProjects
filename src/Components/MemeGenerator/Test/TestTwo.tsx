@@ -1,5 +1,5 @@
 import React from "react";
-import "../Styles/TestTwo.css"
+import "../Test/TestTwo.css"
 
 const TestTwo = (): JSX.Element => {
   const [count, setCount] = React.useState(0);
@@ -10,6 +10,7 @@ const TestTwo = (): JSX.Element => {
   function subtract() {
     setCount((prevCount) => prevCount - 1);
   }
+  
 
   return (
     <div className="counter">
