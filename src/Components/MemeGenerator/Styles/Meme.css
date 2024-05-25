@@ -11,10 +11,13 @@
 .meme-form--label{
   font-family: "Karla", sans-serif;
   text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 
 .meme-form--input {
-  height: 30px;
+  height: 40px;
+  padding: 5px;
   border-radius: 5px;
   border: 1px solid D5D4D8;
   text-indent: 5px;

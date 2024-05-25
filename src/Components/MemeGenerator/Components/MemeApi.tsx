@@ -1,31 +1,41 @@
 import React from "react";
 import "../Styles/Meme.css";
-import memesData from "./memesData";
 
-const Meme = (): JSX.Element => {
-  //const [memeImage, setMemeImage] = React.useState("http://i.imgflip.com/1bij.jpg");
+interface Meme {
+  id: string;
+  name: string;
+  url: string;
+  width: number;
+  height: number;
+  box_count: number;
+}
+
+const MemeApi = (): JSX.Element => {
   const [meme, setMeme] = React.useState({
     topText: "",
     bottomText: "",
     randomImage: "http://i.imgflip.com/1bij.jpg",
   });
 
-  const [allMemeImages, setAllMemeImages] = React.useState(memesData)
+  const [allMemes, setAllMemes] = React.useState<Meme[]>([]);
 
+  React.useEffect(() => {
+    fetch("https://api.imgflip.com/get_memes")
+      .then((res) => res.json())
+      .then((data) => setAllMemes(data.data.memes));
+  }, []);
+  //console.log(allMemes);
+  
   const getMemeImage = () => {
-    const memesArray = allMemeImages.data.memes;
-    // console.log(memesArray);
-    const randomNumber = Math.floor(Math.random() * memesArray.length);
-    // console.log(randomNumber);
-    const url = memesArray[randomNumber].url;
-    setMeme({ ...meme, randomImage: url });
+    const randomNumber = Math.floor(Math.random() * allMemes.length)
+    const url = allMemes[randomNumber].url;
+    setMeme((prevMeme) => ({ ...prevMeme, randomImage: url }));
   };
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>{
-    const {name ,value} = event.target;
-    setMeme({...meme, [name]:value})
-    //console.log(meme);
-  }
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    setMeme((prevMeme) => ({ ...prevMeme, [name]: value }));
+  };
 
   return (
     <main className="meme-main">
@@ -39,7 +49,7 @@ const Meme = (): JSX.Element => {
             name="topText"
             value={meme.topText}
             onChange={handleChange}
-            />
+          />
         </label>
         <label className="meme-form--label">
           Bottom text
@@ -69,4 +79,4 @@ const Meme = (): JSX.Element => {
   );
 };
 
-export default Meme;
+export default MemeApi;
