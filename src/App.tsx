@@ -7,9 +7,9 @@ function App() {
     <>
       <h1 style={{color:'gray'}}>Vite + React + Typescript</h1>
       {/* <Test /> */}
-      {/* <ProjectBasic/> */}
+      <ProjectBasic/>
       {/* <AirBnbClone/> */}
-      <MemeGenerator/>
+      {/* <MemeGenerator/> */}
     </>
   );
 }
