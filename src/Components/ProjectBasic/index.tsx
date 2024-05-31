@@ -6,7 +6,7 @@ export const ProjectBasic = (): JSX.Element => {
   const [darkMode, setDarkMode] = React.useState(true)
 
   const toggleDarkMode = () =>{
-    console.log("Clicked!");
+    //console.log("Clicked!");
     setDarkMode(!darkMode);
   }
   return (
